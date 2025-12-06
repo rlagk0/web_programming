@@ -16,7 +16,6 @@ body {
     padding-top: 80px;
     margin:0;
 }
-
 /* 네비게이션 바 */
 .nav-container {
     position: fixed;
@@ -257,34 +256,25 @@ body.clip-list-page .clip-container {
 }
 
 /* 검색창 */
-body.clip-list-page .lecture-search {
+.lecture-search {
     margin: 20px auto 10px auto;
     border-radius: 8px;
     border: 1px solid #ccc;
-    width: 55vh;
-    height: 45px;
+    width: 50vh;
+    height: 53px;
     background-color: #fff;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 10px;
-    padding: 0 10px;
-
-   
-    position: relative;
 }
 
-body.clip-list-page .lecture-search input[type="text"] {
-    flex: 1;
+.lecture-search input[type="text"] {
     border: none;
     outline: none;
-    font-size: 14px;
-}
-
-body.clip-list-page .lecture-search input[type="image"] {
-    width: 24px;
-    height: 24px;
-    cursor: pointer;
+    width: 40vh;
+    height: 35px;
+    color: gray;
+    font-size: 15px;
 }
 
 /* 검색 자동완성 (Autocomplete)*/
@@ -321,6 +311,13 @@ body.clip-list-page .autocomplete li:hover {
     background: #f6f6f6;
 }
 
+body.clip-list-page .clip-info h3.read {
+    border-bottom: 1.5px solid #808080; 
+    color: #808080; 
+    display: inline-block; 
+    line-height: 1;
+}
+
 /* 정렬 바 */
 body.clip-list-page .search-sort-bar {
     display: flex;
@@ -340,7 +337,6 @@ body.clip-list-page .clip-list {
     display: flex;
     flex-direction: column;
     gap: 20px; 
-    
     max-width: 1000px; 
     margin: 0 auto; 
 }
@@ -353,6 +349,8 @@ body.clip-list-page .clip-item {
     box-shadow: none; 
     cursor: pointer;
     transition: transform 0.2s;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ddd;
 }
 
 body.clip-list-page .clip-item:hover {
@@ -445,7 +443,7 @@ body.clip-detail-page main {
 body.clip-detail-page .content {
     flex: 3;
     background: #fff;
-    padding: 30px;
+    padding: 30px 50px;
     border-radius: 10px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
@@ -641,4 +639,45 @@ body.clip-detail-page .footer-info p {
     margin-bottom: 0;
     font-weight: bold;
     line-height: 1.2;
+}
+
+
+/* 페이지 이동 */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin: 40px 0;
+}
+
+/* radio 숨기기 */
+.pagination input[type="radio"] {
+    display: none;
+}
+
+/* 기본 버튼 스타일 */
+.pagination label {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 8px 14px;
+    font-size: 14px;
+    color: #333;
+    background-color: white;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+/* hover 시 색상 변경 */
+.pagination label:hover {
+    background-color: #ff9f3c;
+    color: white;
+    border-color: #ff9f3c;
+}
+
+/* 클릭된 (checked) 상태 유지 */
+.pagination input[type="radio"]:checked + label {
+    background-color: #ec8201;
+    color: white;
+    border-color: #ec8201;
 }
