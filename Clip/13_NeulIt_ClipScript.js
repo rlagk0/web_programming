@@ -129,11 +129,17 @@ function initMainPage() {
 
     clipsArray.forEach((item, idx) => {
         const id = item.dataset.id || idx;
+        const titleElement = item.querySelector('h3');
 
-        if (readData[id]) item.style.opacity = "0.5";
+        if (readData[id] && titleElement) {
+            titleElement.classList.add('read');
+        }
 
         item.addEventListener("click", () => {
-            item.style.opacity = "0.5";
+            if (titleElement) {
+                titleElement.classList.add('read');
+            }
+            
             readData[id] = true;
             sessionStorage.setItem("clip_read", JSON.stringify(readData));
         });
