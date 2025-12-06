@@ -1,3 +1,7 @@
+html, body {
+    height: 100%;
+}
+
 .layout {
     display: grid;
     grid-template-columns: 1fr minmax(0, 1200px) 1fr;
@@ -13,7 +17,6 @@
 .mentor-list-header h2 {
     font-size: 38px;
 }
-
 
 .mentor-list-header {
     display: flex;
@@ -48,15 +51,26 @@
     border-color: #ff8c00;
 }
 
+/* 멘토 카드 리스트 */
 .mentor-list-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 25px;
+    grid-template-columns: repeat(4, 300px); /* 한 줄 최대 4개 */
+    justify-content: center; /* 가운데 정렬 */
+    gap: 35px 40px; /* 세로/가로 간격 */
 }
 
+/* 숨김 처리 */
+.card2.hidden {
+    display: none !important;
+}
+
+/* -------------------- */
+/*     멘토 카드 card2   */
+/* -------------------- */
+
 .card2 {
-    display: flex;              
-    flex-direction: column;    
+    display: flex;
+    flex-direction: column;
     position: relative;
     background: #fff;
     border: 1px solid #e5e7eb;
@@ -66,6 +80,8 @@
     text-decoration: none;
     color: inherit;
     transition: transform 0.12s ease, box-shadow 0.12s ease;
+
+    width: 300px;
 }
 
 .inner2 {
@@ -134,7 +150,8 @@
     line-height: 1.5;
     margin: 6px 0;
     padding: 15px;
-}
+
+    height: 60px;}
 
 .low {
     margin-bottom: 5px;
@@ -189,11 +206,18 @@
 }
 
 
+/* 반응형 */
 @media (max-width: 768px) {
     .mentor-list-grid {
         grid-template-columns: 1fr;
     }
 }
+
+
+
+/* -------------------- */
+/*   자동완성 검색창 UI  */
+/* -------------------- */
 
 .lecture-search {
     position: relative;
@@ -224,4 +248,72 @@
 
 .autocomplete li:hover {
     background-color: #f2f2f2;
+}
+
+/* 검색창 전체 박스 */
+.lecture-search {
+    margin: 20px auto 10px auto;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    width: 50vh;
+    height: 53px;
+    background-color: #fff;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: relative; /* 자동완성 리스트 배치를 위해 필요 */
+}
+
+/* 텍스트 입력창 */
+.lecture-search input[type="text"] {
+    border: none;
+    outline: none;
+    width: 40vh;
+    height: 35px;
+    color: gray;
+    font-size: 15px;
+}
+
+/* 자동완성 리스트 */
+.autocomplete {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    width: 50vh;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-top: none;
+    max-height: 160px;
+    overflow-y: auto;
+    display: none;
+    z-index: 1000;
+}
+
+/* 자동완성 리스트 개별 항목 */ 
+.autocomplete li {
+    padding: 10px;
+    cursor: pointer;
+}
+
+/* hover 시 강조 */
+.autocomplete li:hover {
+    background-color: #f2f2f2;
+}
+
+#searchInput {
+    color: #000;
+}
+
+#searchInput::placeholder {
+    opacity: 0;
+    transform: translateY(8px);
+    transition: all 0.35s ease;
+}
+
+#searchInput.show::placeholder {
+    opacity: 1;
+    transform: translateY(0);
 }

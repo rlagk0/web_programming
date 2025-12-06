@@ -16,6 +16,7 @@ body {
     padding-top: 80px;
     margin:0;
 }
+
 /* 네비게이션 바 */
 .nav-container {
     position: fixed;
@@ -574,6 +575,7 @@ body.clip-detail-page .footer-info p {
     color: #bbb !important;
     line-height: 1.6 !important;
 }
+
 /* 댓글 섹션 */
 .comments-section {
     margin-top: 30px;
