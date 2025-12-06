@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>클립 목록페이지</title>
-  <link rel="stylesheet" href="13_NeulIt_ClipStyle.css">
-  <link rel="stylesheet" href="../13_NeulIt_style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>클립 목록페이지</title>
+    <link rel="stylesheet" href="13_NeulIt_ClipStyle.css">
+    <link rel="stylesheet" href="../13_NeulIt_style.css">
 </head>
 <body class="clip-list-page">
 
@@ -53,14 +53,13 @@
     <main class="clip-container">
 
         <div class="lecture-search">
-            <input type="text" placeholder="검색">
-            <input type="image" src="../Images/search.svg" alt="검색 로고">
-            <ul id="autocomplete-list" class="autocomplete"></ul>
+        <input id="searchInput" type="text" name="text" placeholder="검색">
+        <input type="image" src="../Images/search.svg" alt="검색 로고">
+        <ul id="autocomplete-list" class="autocomplete"></ul>
         </div>
 
         <div class="search-sort-bar">
             <div class="sort-box">
-                <label for="sort">정렬:</label>
                 <select id="sort">
                     <option value="recent">최신순</option>
                     <option value="popular">인기순</option>
@@ -144,10 +143,26 @@
                     <img src="../Images/spring.png" alt="Spring">
                 </div>
             </article>
-
         </section>
-
     </main>
+
+    <!-- 페이지 이동 -->
+    <div class="pagination">
+        <input type="radio" id="page1" name="page" checked>
+        <label for="page1">1</label>
+
+        <input type="radio" id="page2" name="page">
+        <label for="page2">2</label>
+
+        <input type="radio" id="page3" name="page">
+        <label for="page3">3</label>
+
+        <input type="radio" id="page4" name="page">
+        <label for="page4">4</label>
+
+        <input type="radio" id="page5" name="page">
+        <label for="page5">5</label>
+    </div>
 
     <footer class="footer">
         <div class="footer-container">
@@ -163,5 +178,6 @@
     </footer>
 
     <script src="13_NeulIt_ClipScript.js"></script>
+    <script src="../13_NeulIt_dropdown.js"></script>
 </body>
 </html>
